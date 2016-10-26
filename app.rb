@@ -30,7 +30,7 @@ URLS = {
 
 # determine the browser
 require 'browser'
-def determine_browser
+before do
   @browser ||= Browser.new(
     request.user_agent,
     accept_language: "en-us"
@@ -44,7 +44,6 @@ end
 #   via SMS
 #
 get '/' do
-  determine_browser
   erb :index
 end
 
