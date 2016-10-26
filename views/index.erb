@@ -3,14 +3,16 @@
 </h1>
 
 <p>
-  <% unless @browser.platform.ios?%>
-    <a href="<%= URLS[:android] %>">
+  <% unless @browser.platform.ios? %>
+    <a href="https://play.google.com/store/apps/details?id=com.imdb.mobile">
+      <!-- place this image in a public/ folder -->
       <img src="google-play-badge.png" />
     </a>
   <% end %>
 
-  <% unless @browser.platform.android?%>
-    <a href="<%= URLS[:ios] %>">
+  <% unless @browser.platform.android? %>
+    <a href="https://geo.itunes.apple.com/us/app/google-official-search-app/id284815942">
+      <!-- place this image in a public/ folder -->
       <img src='app-store-badge.svg' />
     </a>
   <% end %>
@@ -18,6 +20,7 @@
   <% unless @browser.platform.ios? ||
             @browser.platform.android? %>
     <a href="/download">
+      <!-- place this image in a public/ folder -->
       <img src='sms-badge.png' />
     </a>
   <% end %>

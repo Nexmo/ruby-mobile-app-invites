@@ -23,12 +23,7 @@ set :session_secret, '123456'
 # specify a default layout
 set :erb, layout: :layout
 
-URLS = {
-  android: "https://play.google.com/store/apps/details?id=com.imdb.mobile",
-  ios: "https://geo.itunes.apple.com/us/app/google-official-search-app/id284815942"
-}
-
-# determine the browser
+# determine the browser and platform
 require 'browser'
 before do
   @browser ||= Browser.new(
@@ -67,12 +62,14 @@ end
 post '/send_sms' do
   message = "Download our app on #{url('/')}"
 
+  # send the message
   response = nexmo.send_message(
     from: 'My App',
     to: params[:number],
     text: message
   )['messages'].first
 
+  # verify the response
   if response['status'] == '0'
     flash[:notice] = 'SMS sent'
     redirect '/'
