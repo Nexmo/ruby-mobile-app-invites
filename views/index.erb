@@ -1,3 +1,24 @@
 <h1>
-  Hello World!
+  The Best Mobile App &reg;
 </h1>
+
+<p>
+  <% unless @browser.platform.ios?%>
+    <a href="<%= URLS[:android] %>">
+      <img src="google-play-badge.png" />
+    </a>
+  <% end %>
+
+  <% unless @browser.platform.android?%>
+    <a href="<%= URLS[:ios] %>">
+      <img src='app-store-badge.svg' />
+    </a>
+  <% end %>
+
+  <% unless @browser.platform.ios? ||
+            @browser.platform.android? %>
+    <a href="/download">
+      <img src='sms-badge.png' />
+    </a>
+  <% end %>
+</p>
