@@ -1,6 +1,6 @@
-# Mobile App Promotion
+# Mobile App Invites
 
-A Sinatra (Ruby) app showing how to implement mobile app promotion using the Nexmo SMS API.
+A Sinatra (Ruby) app showing how to implement mobile app invites using the Nexmo SMS API.
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ Finally make sure your application is available from a phone. For this you will 
 
 ## Usage
 
-This app shows you how to send an SMS to
+This app shows you how to send an SMS to a
 mobile phone with a download link for your
 application. This app uses [Sinatra](http://www.sinatrarb.com/),
 Ruby and the [Nexmo SMS](https://www.nexmo.com/products/sms/) API.

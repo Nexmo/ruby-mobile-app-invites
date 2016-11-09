@@ -45,9 +45,9 @@ end
 
 # Download page
 # - a page where the user
-#   fills in their phone
-#   number in order to get a
-#   download link
+#   fills in a phone number
+#   and a name in order to
+#   send a download link
 #
 get '/download' do
   erb :download
@@ -60,7 +60,8 @@ end
 #   link
 #
 post '/send_sms' do
-  message = "Download our app on #{url('/')}"
+  name = params[:name]
+  message = "#{name} invites you to download My App.\n\n #{url('/')}"
 
   # send the message
   response = nexmo.send_message(
